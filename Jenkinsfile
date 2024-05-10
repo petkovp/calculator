@@ -18,6 +18,7 @@ environment {
     }
     stage('SonarQube Check') {
       steps {
+        container('maven-pvc') {
         withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'sonarqube') {
         sonarqubeCheck()
         }
