@@ -9,7 +9,7 @@ environment {
   stages {
     stage('Build') {
       steps {
-        echoGitBranch()
+        gitBranch()
       }
     }
     stage('SonarQube Check') {
