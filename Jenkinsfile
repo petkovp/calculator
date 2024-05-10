@@ -2,18 +2,20 @@ pipeline {
   agent {
     label 'maven'
   }
+environment {
+   BRANCH = "${GIT_BRANCH.split("/")[1]}"
+   TAG = "${BRANCH}-${BUILD_TIMESTAMP}"
+}
   stages {
     stage('Build') {
       steps {
-        echo "building"
+        echoGitBranch()
       }
     }
     stage('SonarQube Check') {
       steps {
         withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'sonarqube') {
-          sh '''
-          mvn package sonar:sonar
-          '''
+        sonarqubeCheck()
         }
       }
     }
