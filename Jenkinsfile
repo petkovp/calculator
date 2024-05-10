@@ -1,3 +1,5 @@
+@library ('shared-library') _
+
 pipeline {
   agent {
     label 'maven'
