@@ -2,7 +2,9 @@
 
 pipeline {
   agent {
-    label 'maven'
+    kubernetes {
+      inheritFrom 'maven-pvc'
+    }
   }
 environment {
    BRANCH = "${GIT_BRANCH.split("/")[1]}"
