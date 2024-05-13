@@ -25,5 +25,10 @@ environment {
         }
       }
     }
+    stage("Quality gate") {
+      steps {
+        qualityGateCheck.groovy
+      }
+    }
   }
 }
