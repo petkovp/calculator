@@ -1,3 +1,3 @@
 @Library('shared-library') _
 
-servicePipeline(TAG: 'master')
+servicePipeline(TAG: '${BRANCH}-${BUILD_TIMESTAMP}')
