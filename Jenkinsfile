@@ -21,6 +21,7 @@ environment {
         container('maven-pvc') {
         withSonarQubeEnv(installationName: 'SonarQube', credentialsId: 'sonarqube') {
         sonarqubeCheck()
+        sonarqubeCheck.quality()
           }
         }
       }
