@@ -1,3 +1,3 @@
 @Library('shared-library') _
 
-servicePipeline(BRANCH: "${GIT_BRANCH.split("/")[1]}", TAG: "${BRANCH}-${BUILD_TIMESTAMP}")
+servicePipeline(Branch: "${GIT_BRANCH.split("/")[1]}", Tag: "${BRANCH}-${BUILD_TIMESTAMP}")
